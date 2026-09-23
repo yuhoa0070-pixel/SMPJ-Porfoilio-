@@ -178,6 +178,15 @@ a { color: inherit; text-decoration: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
+/* Scroll-triggered reveal: section fades/slides up as it enters the
+   viewport (see IntersectionObserver wiring in script.js). */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2, .6, .2, 1), transform .7s cubic-bezier(.2, .6, .2, 1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* Smooth cross-fade between pages (native View Transitions API). Browsers
    without support just navigate normally — no fallback needed. */
 @view-transition { navigation: auto; }

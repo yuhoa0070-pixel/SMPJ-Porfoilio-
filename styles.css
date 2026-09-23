@@ -109,7 +109,8 @@ body.dark .canvas-section::before, body.dark .canvas-section::after { filter: in
 .canvas-topline { display: flex; justify-content: space-between; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #babbb5; font-size: 8px; letter-spacing: .08em; }
 .board-row { display: grid; gap: 12px; }
 .board-row-small { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.mini-card { min-height: 125px; min-width: 0; padding: 10px; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,.14); background: white; }
+.mini-card { min-height: 125px; min-width: 0; padding: 10px; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,.14); background: white; transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease; }
+.mini-card:hover { transform: translateY(-4px); box-shadow: 0 14px 26px rgba(17,17,17,.14); }
 .mini-card b { font-size: 10px; letter-spacing: -.04em; overflow-wrap: break-word; }
 .mini-card i { flex: 1; margin: 12px 0; background: repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 7px); opacity: .38; }
 .mini-card span { font-size: 7px; }
@@ -118,7 +119,8 @@ body.dark .canvas-section::before, body.dark .canvas-section::after { filter: in
 .mini-card.yellow { background: #f4df5d; }.mini-card.white { background: #fff; }
 .board-divider { height: 54px; margin: 14px -18px; padding: 0 18px; display: flex; align-items: center; color: white; background: #282828; font-size: 8px; letter-spacing: .08em; }
 .board-row-large { grid-template-columns: minmax(0, .9fr) minmax(0, 1.35fr) minmax(0, .9fr); }
-.case-card { position: relative; min-height: 250px; padding: 16px; overflow: hidden; background: white; border: 1px solid #d1d1cc; }
+.case-card { position: relative; min-height: 250px; padding: 16px; overflow: hidden; background: white; border: 1px solid #d1d1cc; transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease; }
+.case-card:hover { transform: translateY(-4px); box-shadow: 0 18px 32px rgba(17,17,17,.14); }
 .case-card > span, .case-card > small { position: absolute; font-size: 7px; letter-spacing: .06em; }
 .case-card > span { top: 15px; left: 16px; }.case-card > small { left: 16px; bottom: 14px; }
 .case-type strong { position: absolute; left: 16px; bottom: 40px; font-size: 38px; line-height: .75; letter-spacing: -.12em; }
