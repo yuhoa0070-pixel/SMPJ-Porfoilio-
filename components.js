@@ -50,10 +50,8 @@
       this.classList.add('site-footer');
       this.innerHTML = `
       <div class="socials" aria-label="Social links">
-        <a href="#" aria-label="X">𝕏</a>
-        <a href="#" aria-label="Instagram">◎</a>
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="GitHub">◉</a>
+        <a href="https://x.com/0xmeantx" target="_blank" rel="noreferrer" aria-label="X">𝕏</a>
+        <a href="https://www.linkedin.com/in/sokmean-mao-7ba2a0232" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
       </div>
       <p>© <span id="year"></span> Made with <span class="heart">♥</span> by <strong>SM</strong></p>
       <div class="utilities">
