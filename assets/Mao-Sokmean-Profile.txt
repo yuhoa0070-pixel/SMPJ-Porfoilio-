@@ -1,0 +1,20 @@
+MAO SOKMEAN
+UX/UI Designer
+
+PROFILE
+I design clear, accessible digital experiences that connect user needs with thoughtful product strategy.
+
+CORE SKILLS
+- User research and personas
+- User flows and journey mapping
+- Information architecture
+- Wireframing and prototyping
+- Interaction and responsive design
+- Design systems, components, and tokens
+- Accessibility and usability testing
+- Figma, Auto Layout, and developer handoff
+
+CONTACT
+Email: hello@smpj.studio
+Portfolio: http://127.0.0.1:4173/work.html
+
