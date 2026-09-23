@@ -1,5 +1,22 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const faqTriggers = document.querySelectorAll('.faq-trigger');
+faqTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    const willOpen = trigger.getAttribute('aria-expanded') !== 'true';
+
+    faqTriggers.forEach((otherTrigger) => {
+      if (otherTrigger === trigger) return;
+      otherTrigger.setAttribute('aria-expanded', 'false');
+      document.getElementById(otherTrigger.getAttribute('aria-controls'))?.classList.remove('is-open');
+    });
+
+    trigger.setAttribute('aria-expanded', String(willOpen));
+    panel.classList.toggle('is-open', willOpen);
+  });
+});
+
 function initTypewriter(el, startDelay) {
   if (!el) return;
   const words = el.dataset.words.split('|');

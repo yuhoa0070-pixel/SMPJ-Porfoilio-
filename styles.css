@@ -792,13 +792,16 @@ body.dark .booking-form input, body.dark .booking-form textarea { background: co
 .faq-heading h2 { margin: 0; font: 500 clamp(27px, 4vw, 39px)/.94 var(--font-mono); letter-spacing: -.07em; }
 .faq-heading > span { display: block; max-width: 470px; margin: 16px auto 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .faq-list { width: calc(100% - 48px); margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
-.faq-list details { display: flow-root; }
-.faq-list summary { position: relative; display: flex; width: fit-content; max-width: 82%; min-height: 46px; margin-left: 0; padding: 13px 48px 13px 16px; align-items: center; color: var(--accent-ink); background: var(--accent); border: 1px solid var(--accent); font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; transition: color .2s ease, background .2s ease, transform .2s ease; }
-.faq-list summary::-webkit-details-marker { display: none; }
-.faq-list summary:hover, .faq-list details[open] summary { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); transform: translateX(-3px); }
-.faq-list summary i { display: none; }
-.faq-list details p { position: relative; width: fit-content; max-width: 82%; margin: 22px 0 0 auto; padding: 15px 18px; border: 1px solid var(--line); color: var(--muted); background: var(--panel); font-size: 13px; line-height: 1.6; }
-.faq-list details p::before { content: "SM"; position: absolute; top: -14px; right: 0; color: var(--accent); font: 8px var(--font-mono); letter-spacing: .1em; }
+.faq-item { display: flow-root; }
+.faq-trigger { position: relative; display: flex; width: fit-content; max-width: 82%; min-height: 46px; margin-left: 0; padding: 13px 48px 13px 16px; align-items: center; color: var(--accent-ink); background: var(--accent); border: 1px solid var(--accent); font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; transition: color .2s ease, background .2s ease, transform .2s ease; }
+.faq-trigger:hover, .faq-trigger[aria-expanded="true"] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); transform: translateX(-3px); }
+.faq-trigger i { display: none; }
+.faq-panel { display: grid; grid-template-rows: 0fr; margin-left: auto; width: fit-content; max-width: 82%; transition: grid-template-rows .38s cubic-bezier(.4, 0, .2, 1); }
+.faq-panel.is-open { grid-template-rows: 1fr; }
+.faq-panel-inner { overflow: hidden; min-height: 0; }
+.faq-panel p { position: relative; width: fit-content; max-width: 100%; margin: 22px 0 0 auto; padding: 15px 18px; border: 1px solid var(--line); color: var(--muted); background: var(--panel); font-size: 13px; line-height: 1.6; opacity: 0; transition: opacity .28s ease .08s; }
+.faq-panel.is-open p { opacity: 1; }
+.faq-panel p::before { content: "SM"; position: absolute; top: -14px; right: 0; color: var(--accent); font: 8px var(--font-mono); letter-spacing: .1em; }
 @media (max-width: 720px) {
   .identity-description { width: calc(100% - 36px); margin-top: -30px; }
   .attraction-section { width: 100%; height: 400px; margin: -46px 0 76px; }
@@ -812,6 +815,7 @@ body.dark .booking-form input, body.dark .booking-form textarea { background: co
   .faq-section::after { right: 18px; }
   .faq-heading { padding-inline: 18px; }
   .faq-list { width: calc(100% - 32px); }
-  .faq-list summary { max-width: 90%; min-height: 48px; padding: 12px 42px 12px 13px; font-size: 12px; }
-  .faq-list details p { max-width: 90%; padding: 13px 14px; font-size: 12px; }
+  .faq-trigger { max-width: 90%; min-height: 48px; padding: 12px 42px 12px 13px; font-size: 12px; }
+  .faq-panel { max-width: 90%; }
+  .faq-panel p { padding: 13px 14px; font-size: 12px; }
 }
