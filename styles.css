@@ -93,7 +93,7 @@ main { width: min(var(--size-shell), calc(100% - 40px)); min-height: calc(100vh 
 .typewriter { display: inline-flex; align-items: center; font-family: var(--font-mono); white-space: nowrap; overflow: hidden; }
 .typewriter-cursor { margin-left: 2px; color: var(--accent); animation: typewriter-blink 1s step-end infinite; }
 @keyframes typewriter-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-.portfolio-hero { min-height: 294px; padding: 74px 24px 58px; text-align: center; border-bottom: 1px solid var(--line); }
+.portfolio-hero { position: relative; min-height: 294px; padding: 74px 24px 58px; text-align: center; border-bottom: 1px solid var(--line); }
 .portfolio-hero .eyebrow { margin-bottom: 20px; }
 .portfolio-hero h1 { margin: 0; font-size: clamp(48px, 6.5vw, 78px); line-height: .9; letter-spacing: -.09em; }
 .portfolio-hero .lede { max-width: 720px; margin-top: 24px; }
@@ -158,9 +158,10 @@ body.dark .project-canvas { box-shadow: 0 24px 64px rgba(0,0,0,.38); }
 .frame-library { right: 6%; bottom: 9%; width: 205px; height: 225px; padding: 24px 18px; }.frame-library b { display: block; margin: 8px 0; font-size: 7px; letter-spacing: .1em; }.component { display: block; margin-bottom: 7px; padding: 8px 10px; }.component.primary { color: #fff; background: #1648ff; }.component.neutral, .component.field { border: 1px solid #ddd; }.swatches { display: flex; gap: 7px; margin-top: 17px; }.swatches i { width: 23px; height: 23px; background: #1648ff; }.swatches i:nth-child(2) { background: #ff7657; }.swatches i:nth-child(3) { background: #151515; }.swatches i:nth-child(4) { background: #e8e8e8; }
 body.dark .figma-showcase { background: var(--paper); }
 .intro { position: relative; padding: var(--section-space) 24px 0; text-align: center; }
-.intro::before, .intro::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 0; width: 1px; background: var(--line); pointer-events: none; }
-.intro::before { left: max(24px, calc((100% - var(--size-content)) / 2)); }
-.intro::after { right: max(24px, calc((100% - var(--size-content)) / 2)); }
+.intro::before, .intro::after,
+.portfolio-hero::before, .portfolio-hero::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 0; width: 1px; background: var(--line); pointer-events: none; }
+.intro::before, .portfolio-hero::before { left: max(24px, calc((100% - var(--size-content)) / 2)); }
+.intro::after, .portfolio-hero::after { right: max(24px, calc((100% - var(--size-content)) / 2)); }
 h1 { margin: 0; font-family: var(--font-mono); }
 .hero-display { display: flex; align-items: baseline; justify-content: center; gap: .15em; padding-block: .12em .2em; overflow: visible; font-size: clamp(58px, 9vw, 108px); font-weight: 500; line-height: 1; letter-spacing: -.095em; }
 .stripe-word {
