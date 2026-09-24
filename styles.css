@@ -211,11 +211,7 @@ body.dark .specimen::before { opacity: .15; background-image: linear-gradient(rg
 body.dark .specimen::after { background: repeating-radial-gradient(ellipse at center, transparent 0 9px, rgba(17,20,27,.72) 10px 11px); }
 body.dark .orbit { border-color: rgba(17,20,27,.72); mix-blend-mode: multiply; }
 
-.links { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); width: min(var(--size-content), calc(100% - 48px)); margin: var(--section-space) auto; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-/* Bridge the margin gap below .links down to the next section's border. */
-.links::before, .links::after { content: ""; position: absolute; top: 100%; height: var(--section-space); z-index: 0; width: 1px; background: var(--line); pointer-events: none; }
-.links::before { left: 0; }
-.links::after { right: 0; }
+.links { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); width: min(var(--size-content), calc(100% - 48px)); margin: var(--section-space) auto 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 /* Extend the connector line through the margin gap above .links instead of
    padding the box itself (which left dead space inside the bordered grid). */
 .profile::before, .profile::after { bottom: calc(-1 * var(--section-space)); }
@@ -416,7 +412,7 @@ body.dark #theme-toggle { color: var(--accent); background: color-mix(in srgb, v
   .hero-display { gap: .12em; font-size: clamp(48px, 16vw, 72px); }
   .pixel-heading { gap: .12em; font-size: clamp(48px, 16vw, 72px); }
   .profile { padding-top: var(--section-space); }
-  .links { grid-template-columns: 1fr; margin-block: var(--section-space); }
+  .links { grid-template-columns: 1fr; margin-top: var(--section-space); margin-bottom: 0; }
   .qr-contact { width: calc(100% - 36px); min-height: 0; margin: 0 auto; padding: var(--section-pad) 18px; }
   .qr-contact::before, .qr-contact::after { width: 100vw; }
   .qr-contact-actions { width: 100%; flex-direction: column; }
