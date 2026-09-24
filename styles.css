@@ -322,22 +322,11 @@ body.dark .archive-menu-panel { box-shadow: 0 22px 52px rgba(0,0,0,.45); }
 .archive-methods { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 52px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .archive-methods span { padding: 18px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font: 9px var(--font-mono); text-align: center; text-transform: uppercase; }
 
-.journey { --journey-side: max(24px, calc((100% - var(--size-content)) / 2)); position: relative; padding-inline: var(--journey-side); border-block: 1px solid var(--line); overflow: hidden; }
-.journey::before, .journey::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: var(--journey-side);
-  background-image: linear-gradient(color-mix(in srgb, var(--paper) 14%, transparent), color-mix(in srgb, var(--paper) 14%, transparent)), url('assets/debut-light.png');
-  background-repeat: repeat;
-  background-size: auto, 200px 200px;
-  opacity: .68;
-}
-.journey::before { left: 0; border-right: 1px solid var(--line); }
-.journey::after { right: 0; border-left: 1px solid var(--line); }
-body.dark .journey::before, body.dark .journey::after { filter: invert(1) brightness(.52) contrast(1.2); opacity: .32; }
-.journey-content { min-height: 0; padding: var(--section-pad) 80px; border-inline: 0; background: color-mix(in srgb, var(--panel) 72%, transparent); }
+.journey { position: relative; border-block: 1px solid var(--line); }
+.journey::before, .journey::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 0; width: 1px; background: var(--line); pointer-events: none; }
+.journey::before { left: max(24px, calc((100% - var(--size-content)) / 2)); }
+.journey::after { right: max(24px, calc((100% - var(--size-content)) / 2)); }
+.journey-content { width: min(var(--size-content), calc(100% - 48px)); margin: 0 auto; padding: var(--section-pad) 0; }
 .journey .eyebrow { margin-bottom: 18px; }
 .journey h2 { margin: 0 0 34px; font-family: var(--font-mono); font-size: clamp(25px, 3vw, 32px); font-weight: 500; letter-spacing: -.06em; }
 .journey-copy { max-width: 620px; color: var(--muted); font-size: 14px; line-height: 1.45; }
@@ -418,9 +407,7 @@ body.dark #theme-toggle { color: var(--accent); background: color-mix(in srgb, v
   .qr-contact::before, .qr-contact::after { width: 100vw; }
   .qr-contact-actions { width: 100%; flex-direction: column; }
   .qr-contact-actions .site-button { width: min(192px, 100%); margin-inline: auto; }
-  .journey { padding-inline: 0; }
-  .journey::before, .journey::after { display: none; }
-  .journey-content { min-height: 0; padding: var(--section-pad) 24px; border-inline: 0; }
+  .journey-content { padding: var(--section-pad) 0; }
   .site-footer { width: 100%; height: auto; grid-template-columns: 1fr auto; }
   .landing-page .site-footer { width: calc(100% - 36px); }
   .site-footer p { display: none; }
