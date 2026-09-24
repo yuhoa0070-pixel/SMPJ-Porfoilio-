@@ -94,10 +94,10 @@
   class ListeningWidget extends HTMLElement {
     connectedCallback() {
       this.classList.add('listening');
-      this.setAttribute('aria-label', 'Listening status');
+      this.setAttribute('aria-label', 'Copyright');
       this.innerHTML = `
       <span class="sound-mark">≋</span>
-      <strong>Now playing</strong><i>·</i><span>Studio Radio</span><i>·</i><span>SM</span>`;
+      <strong>&copy; 2026 Mao Sokmean</strong><i>·</i><span>All rights reserved</span>`;
     }
   }
 
