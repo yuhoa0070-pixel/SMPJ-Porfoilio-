@@ -212,6 +212,10 @@ body.dark .specimen::after { background: repeating-radial-gradient(ellipse at ce
 body.dark .orbit { border-color: rgba(17,20,27,.72); mix-blend-mode: multiply; }
 
 .links { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); width: min(var(--size-content), calc(100% - 48px)); margin: var(--section-space) auto; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+/* Bridge the margin gap below .links down to the next section's border. */
+.links::before, .links::after { content: ""; position: absolute; top: 100%; height: var(--section-space); z-index: 0; width: 1px; background: var(--line); pointer-events: none; }
+.links::before { left: 0; }
+.links::after { right: 0; }
 /* Extend the connector line through the margin gap above .links instead of
    padding the box itself (which left dead space inside the bordered grid). */
 .profile::before, .profile::after { bottom: calc(-1 * var(--section-space)); }
